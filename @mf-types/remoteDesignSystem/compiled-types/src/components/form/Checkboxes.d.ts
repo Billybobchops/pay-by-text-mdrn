@@ -4,6 +4,7 @@ interface CheckboxesProps {
         text: string;
         id: string;
         checked: boolean;
+        required?: boolean;
     }[];
 }
 declare const Checkboxes: React.FC<CheckboxesProps>;

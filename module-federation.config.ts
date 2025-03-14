@@ -1,13 +1,13 @@
 import { createModuleFederationConfig } from '@module-federation/modern-js';
 
 export default createModuleFederationConfig({
-    name: 'remoteDesignSystem',
+    name: 'payByText',
     manifest: {
         filePath: 'static',
     },
     filename: 'static/remoteEntry.js',
     exposes: {
-        './PayByTextPage': './src/components/PayByText.tsx',
+        './PayByText': './src/components/PayByText.tsx',
     },
     remotes: {
         remoteDesignSystem:
@@ -18,6 +18,7 @@ export default createModuleFederationConfig({
     shared: {
         react: { singleton: true, requiredVersion: '18.3.1' },
         'react-dom': { singleton: true, requiredVersion: '18.3.1' },
-        'react-router-dom': { singleton: true },
+        'react-router-dom': { singleton: true, requiredVersion: '18.3.1' },
+        clsx: { singleton: true, requiredVersion: '2.1.1' },
     },
 });
