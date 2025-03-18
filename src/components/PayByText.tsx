@@ -1,5 +1,6 @@
 import 'remoteDesignSystem/DesignSystemRootStyles';
 import { useState } from 'react';
+import AccountLinks from 'remoteDesignSystem/AccountLinks';
 import Checkbox from 'remoteDesignSystem/Checkbox';
 import Divider from 'remoteDesignSystem/Divider';
 import Input from 'remoteDesignSystem/Input';
@@ -13,10 +14,22 @@ const PayByText = () => {
         setIsChecked(!isChecked);
     };
 
+    const dummyAccountLinks = [
+        {
+            text: '#UTIL-1001 Deana Ada',
+            href: '/',
+        },
+        {
+            text: '#UTIL-1004 Nikephoros Botaneiates',
+            href: '/',
+        },
+    ];
+
     return (
         <>
+            <AccountLinks links={dummyAccountLinks} spacing="u-mt-s u-mb-xl" />
             <Divider isDark={false} />
-            <Label inline={true} inputID="pointToCheckbox" required={false}>
+            <Label inline={true} inputID="pointToCheckbox" required={false} spacing="u-mb-m">
                 <Checkbox checked={isChecked} onChange={handleCheckboxChange} spacing="u-ml-none" />
                 Sign up for Pay By Text
             </Label>
